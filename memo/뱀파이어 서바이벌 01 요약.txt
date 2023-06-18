@@ -1,0 +1,28 @@
+뱀파이어 서바이벌
+
+Sprites-> 아틀라스(이미지들)
+	pixels per unit(크기설정) 크기 조정 18권장
+	filter mode(point) 필터안씀
+	compression(none) 압축안함
+	sprite mode(multiple) 멀티플사용시 아틀라스안의 이미지들 하나씩 나눠서 사용할 수 있음
+
+Sprite editor에서 이미지 원하는 크기로 잘라서 사용가능
+
+자른 이미지 scene에 가져와서 transform 0으로 초기화(위치 가운데로 설정)
+
+캐릭터 컴포넌트 추가
+	Physics 2D -> rigidbody 2D 추가(물리영향을 받는 컴포넌트)
+		gravity scale(중력) -> 0으로 설정해야 중력의 영향을 안받음
+	Physics 2D -> capsule collider 2D 추가(물리적인 충돌 면을 결정)
+		size를 캐릭터에 맞게 설정
+
+그림자 추가
+	shadow(자식 오브젝트로 추가)
+		sprite renderer -> order in layer(숫자가 클수록 우선적으로 보임)
+
+기본 배경은 camera의 background에서 변경 가능
+
+
+
+
+
