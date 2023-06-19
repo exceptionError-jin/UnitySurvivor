@@ -1,0 +1,31 @@
+Player 스크립트
+
+codes에 Player생성(사용자 스크립트)
+
+	MonoBehaviour : 게임 로직 구성에 필요한 것들을 가진 클래스
+
+	키보드 입력 받기(상하좌우)
+		input : 유니티에서 받는 모든 입력을 관리하는 클래스
+		GetAxis : 축에 대한 값
+		Horizontal : x축
+		Vertical : y축
+		
+		GetAxisRaw : 값이 딱 맞아떨어짐(더욱 명확한 컨트롤 가능)
+
+	물리 이동
+		Rigidbody2D선언 후 초기화
+		GetComponent<T> : 오브젝트에서 컴포넌트를 가져오는 함수
+
+		FixedUpdate : 물리연산 프레임마다 호출되는 생명주기 함수
+			1. Addforce(직접 힘을 줌)
+			2.Velocity(속도 직접 제어)
+			3.MovePosition(위치를 옮김) -> 위치이동이라 현재 위치도 더해주어야함
+
+	물리이동 구현(모든 방향으로 이동속도가 같아야함)
+		normalized : 백터값의 크기가 1이 되도록 좌표가 수정된 값 (좌 우는 1로 이동하지만 대각선은 루트2)
+		Time.fixedDeltaTime : 물리 프레임 하나가 소비한 시간
+		
+		물리이동 코드 rigid.MovePosition(rigid.position + inputVec.normalized * 속도 * Time.fixedDeltaTime)
+
+		
+		
